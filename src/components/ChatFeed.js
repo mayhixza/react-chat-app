@@ -1,0 +1,69 @@
+import SendMessage from './SendMessage';
+import SentMessage from './SentMessage';
+import RecievedMessages from './RecievedMessages';
+import NoChats from './NoChats';
+
+// const chatFeed = document.querySelector(".chat-feed");
+// chatFeed.scrollTop = chatFeed.scrollHeight;
+
+const ChatFeed = (props) => {    
+    const { chats, activeChat, userName, messages } = props;
+    const chat = chats && chats[activeChat];
+
+    const renderReadReceipts = (message, isMyMessage) => {
+        return chat.people.map((person, index) => person.last_read === message.id && (
+            <div key={`read_${index}`} className="read-receipt" style={{float:isMyMessage ? 'right' : 'left', backgroundImage: `url(${person?.person?.avatar})`, marginTop: "1%"}} />
+        ))
+    }
+
+    const renderMessages = () => {
+        const keys = Object.keys(messages);
+        
+        return keys.map((key, index) => {
+            const message = messages[key];
+            const lastMessageKey = index === 0 ? null : keys[index - 1];
+            const isMyMessage = userName === message.sender.username;
+            // console.log(message.sender)
+
+
+            return (
+                <div key={`msg_${index}`} styles={{width:'100%'}}>
+                    <div className="message-block">
+                        { isMyMessage ? <SentMessage message={message}/> : <RecievedMessages message={message} lastMessage={messages[lastMessageKey]}/>}
+                    </div>
+                    <div className="read-receipts" style={{marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}>
+                        {renderReadReceipts(message, isMyMessage)}
+                    </div>
+                </div>
+            )
+        })
+    }
+
+    renderMessages();
+
+    if (!chat) {
+        return (
+            <div className="no-chat-container">You don't seem to have any chats. Create a new chat to start talking to your friends!</div>
+        )
+    }
+
+    return (
+        <div className="chat-feed">
+            <div className="chat-title-container">
+                <div className="chat-title">{chat?.title}</div>
+                {/* <div className="chat-subtitle">
+                    {chat.people.map((person) => `${person.person.username} `)}
+                </div> */}
+            </div>
+            {renderMessages()}
+            <div style={{ height: '100px'}}/>
+            <div className="message-form-container">
+                <SendMessage {... props} chatId={activeChat}/>
+            </div>
+        </div>
+    )
+
+    console.log(chat.people.map())
+}
+
+export default ChatFeed;

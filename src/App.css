@@ -1,0 +1,345 @@
+/******** Universal Styles ********/
+
+html {
+  --color-text: black;
+  --white: #ffffff;
+  --primary: #e98872;
+  --light: #E0AC9D;
+}
+
+* {
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  letter-spacing: 0.5px;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+/******** Form Styles ********/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62,5%;
+}
+  
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.input {
+  font-size: 1vw;
+  color: #333;
+  margin: 0 auto;
+  padding: 1.2vw;
+  border-radius: 0.5vw;
+  background-color: var(--white);
+  border: none;
+  display: block;
+  transition: all 0.3s;
+  outline: none;
+  margin-bottom: 5%; 
+  width: 80%;
+  height: 6.5vh;
+}
+
+.login-error {
+  text-align: center;
+  margin-bottom: 10%;
+  color: #ffffff
+}
+  
+.form {
+  width: 35vw;
+  background-color: var(--primary);
+  padding: 2.7vw;
+  border-radius: 3.5vw;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+  
+.title {
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 2%;
+  font-size: 2.5vw;;
+}
+  
+.button {
+  border-radius: 2vw;
+  border: none;
+  color: var(--primary);
+  background-color: var(--white);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5vw;
+  padding: 2%;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 5%;
+  width: 40%;
+}
+
+.button:hover {
+  transform: scale(1.15);
+}
+
+/******** No chat page styles ********/
+
+.no-chat-container {
+  text-align: center;
+  margin-left: 20vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 45vh;
+  font-size: 1.5vw
+}
+
+/******** Chat-engine styles ********/
+
+/******** my chats styles ********/
+
+.ce-chat-list {
+  background-color: var(--white) !important;
+}   
+  
+.ce-chats-container {
+  background-color: var(--white) !important;
+  /* width: 4 0vw !important; */
+}
+  
+.ce-active-chat-card {
+  background-color: var(--light) !important;
+  border: 4px solid var(--light) !important;
+  border-radius: 0px !important;
+}
+
+.ce-active-chat-card .ce-chat-title-text {
+    color: var(--white);
+}
+
+.ce-chat-title-text {
+  font-size: 1.2vw;
+  font-weight: bolder;
+}
+  
+.ce-chat-subtitle-text {
+  color: #595959 !important;
+}
+  
+.ce-chat-form-container {
+  padding-bottom: 20px !important;
+  color: var(--primary) !important;
+}
+  
+.ce-text-input {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+}
+  
+.ce-primary-button {
+  /* height: 100% !important;  */
+  border-radius: 12.5vw !important;
+  background-color: var(--primary) !important;
+  position: relative;
+  bottom: 1px;
+}
+
+/******** Feed styles ********/
+  
+.ce-danger-button {
+  background-color: white !important;
+  border-radius: 22px !important;
+}
+
+/* .ce-settings .ce-input.ce-text-input{
+  font-family: Roboto;
+} */
+  
+.ce-section-title {
+  background-color: var(--white) !important;
+}
+
+.ce-avatar-status {
+    width: 25% !important;
+    height: 25% !important;
+}
+
+.ce-input.ce-text-input {
+  background-color: var(--primary);
+  outline: hidden;
+  font-family: Avenir;
+}
+  
+  .ce-autocomplete-input {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+  }
+  
+  .ce-autocomplete-options {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+  background-color: white !important;
+  }
+  
+  .ce-chat-settings-container {
+  padding-top: 12px !important;
+  }
+  
+.ce-chat-avatars-row {
+  display: none !important;
+}
+  
+
+.ce-chat-unread-dot {
+  background-color: var(--primary) !important;
+}
+  
+  /* Custom Feed Styles */
+  
+.chat-feed {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+  
+.chat-title-container {
+  width: calc(100% - 36px);
+  padding: 18px;
+  text-align: center;
+}
+  
+  .chat-title {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 24px;
+  }
+  
+  .chat-subtitle {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 12px;
+  padding-top: 4px;
+  }
+  
+  .message-row {
+  float: left;
+  width: 100%;
+  display: flex;
+  margin-left: 18px;
+  }
+  
+  .message-block {
+  width: 100%;
+  display: inline-block;
+  }
+  
+  .message-avatar {
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 100%;
+  color: white;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  background-size: 3.5vw;
+  }
+  
+.message {
+  padding: 1.75%;
+  font-size: 1.1rem;
+  border-radius: 1.3rem;
+  min-width: 8%;
+  max-width: 60%;
+  text-align: center;
+}
+  
+.message-image {
+  margin-right: 18px;
+  object-fit: cover;
+  border-radius: 6px;
+  height: 15vw;
+  /* width: 30vw; */
+  max-height: 5%;
+  max-width: 50%;
+  min-height: 10%;
+  min-width: 100px;
+}
+  
+.read-receipts {
+  position: relative;
+  bottom: 6px;
+}
+  
+.read-receipt {
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  margin: 1.5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+}
+  
+.message-form-container {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 18px;
+  background-color: rgb(230, 230, 230);
+}
+  
+.message-form {
+  overflow: hidden;
+  border-radius: 6px;
+  /* border: 1px solid #3b2a50; */
+  background-color: white;
+}
+  
+  .message-input {
+  height: 40px;
+  width: calc(100% - 132px);
+  background-color: white;
+  border: 1px solid white;
+  padding: 0px 2vw;
+  outline: none;
+  font-size: 15px;
+  }
+  
+  .image-button {
+  cursor: pointer;
+  padding: 0px 12px;
+  height: 100%;
+  }
+  
+  .send-button {
+  height: 42px;
+  background-color: white;
+  border: 1px solid white;
+  padding: 0px 18px;
+  cursor: pointer;
+  }
+  
+  .send-icon {
+  top: 1px;
+  position: relative;
+  transform: rotate(-90deg);
+  }
+  
+  .picture-icon {
+  top: 1%;
+  position: relative;
+  font-size: 14px;
+  }
